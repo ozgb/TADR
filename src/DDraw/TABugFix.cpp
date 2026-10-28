@@ -2873,7 +2873,8 @@ TABugFixing::TABugFixing ()
 			sizeof(AiCommanderKeepsOrdersPatch), INLINE_UNPROTECTEVINMENT,
 			AiCommanderKeepsOrdersPatch));
 	}
-	else
+	else if (memcmp(reinterpret_cast<const void*>(AiCommanderKeepsOrdersPatchAddr),
+		AiCommanderKeepsOrdersPatch, sizeof(AiCommanderKeepsOrdersPatch)) != 0)
 	{
 		IDDrawSurface::OutptFmtTxt("[AiCommanderKeepsOrders] bytes at 0x%08X not stock; patch skipped",
 			AiCommanderKeepsOrdersCheckAddr);
