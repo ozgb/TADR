@@ -248,9 +248,8 @@ namespace
 	BYTE AntiNukeMinimapCoverageAdjustPatch[6] = { 0x90, 0x90, 0x90, 0x90, 0x90, 0x90 };
 
 #if AI_COMMANDER_KEEPS_ORDERS_ENABLE
-	// ReactToAttack (0x00406F80): when a local AI's CANCAPTURE unit is hit, stock TA
-	// delays the AI and calls DeleteOrders on the unit, stalling its commander. Only the
-	// AI's host runs this block, so skipping it cannot desync. Same patch as BTA 3.9.02.
+	// Skips ReactToAttack's DeleteOrders on a hit local-AI commander, which stalls the AI.
+	// Only the AI's host runs that block, so it cannot desync. The 3.9.02 exe ships this patch.
 	const DWORD AiCommanderKeepsOrdersCheckAddr = 0x00406FAEu;
 	const BYTE AiCommanderKeepsOrdersExpected[11] = {
 		0x8B, 0x88, 0x45, 0x02, 0x00, 0x00,  // mov ecx,[eax+245h]

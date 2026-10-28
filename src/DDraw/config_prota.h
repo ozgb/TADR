@@ -43,8 +43,7 @@
 #define FIXED_POSN_GUARDING_CONS_ENABLE 1
 #define PATROLING_CONS_RECLAIM_OR_ASSIST_ENABLE 1
 #define CONSTRUCTION_KICKOUT_ENABLE 1
-// A locally hosted AI no longer wipes its commander's orders when the commander is hit.
-// Host-only AI behaviour, so not a sync risk; a mod may turn it off as a balance choice.
+// Host-only AI code, so no sync risk: turning it off is purely a balance choice.
 #define AI_COMMANDER_KEEPS_ORDERS_ENABLE 1
 
 //

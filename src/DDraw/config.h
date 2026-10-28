@@ -52,7 +52,6 @@
 #error "ALLIED_PROJECTILE_COLLISION_ENABLE must be 0 or 1"
 #endif
 
-// Every mod explicitly chooses whether a local AI's commander keeps its orders when attacked.
 #ifndef AI_COMMANDER_KEEPS_ORDERS_ENABLE
 #error "config_*.h must define AI_COMMANDER_KEEPS_ORDERS_ENABLE"
 #endif
