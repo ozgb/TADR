@@ -52,6 +52,14 @@
 #error "ALLIED_PROJECTILE_COLLISION_ENABLE must be 0 or 1"
 #endif
 
+// Every mod explicitly chooses whether a local AI's commander keeps its orders when attacked.
+#ifndef AI_COMMANDER_KEEPS_ORDERS_ENABLE
+#error "config_*.h must define AI_COMMANDER_KEEPS_ORDERS_ENABLE"
+#endif
+#if AI_COMMANDER_KEEPS_ORDERS_ENABLE != 0 && AI_COMMANDER_KEEPS_ORDERS_ENABLE != 1
+#error "AI_COMMANDER_KEEPS_ORDERS_ENABLE must be 0 or 1"
+#endif
+
 //
 // Weather report rows.  WEATHER_REPORT is the master switch for the whole
 // top-of-screen overlay (wind / tidal / game time); these two select which of
